@@ -24,10 +24,19 @@ evals<-read.csv("data/evals.csv", row.names=1)
 1.  Visualize the distribution of `score` in the dataframe `evals`.
 
 ```{r viz-score}
-# add code here
+
+ggplot(data = evals, mapping = aes(x = gender, y = score)) + geom_point()
+
+summarise(score, mean_score = mean(score))
+
+ggplot(data = evals, aes(x = score, y = bty_avg)) + geom_point()
+
+ggplot(data = evals, aes(x = score, y = bty_avg)) + geom_jitter()
+
 ```
 
-*Add your other details and narratives here.*
+This data visualisation shows that most students rate their courses quite highly as there is a large count of students who rate their course between score 4 and 5.
+From my summary statistic, the mean score is 4.17473 
 
 2.  Visualize and describe the relationship between `score` and `bty_avg` using `geom_point()` to represent the data. 
 
